@@ -1,9 +1,15 @@
 import React from "react";
 
+import AppTopBar from "./Components/AppBar";
+
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div>
+      <AppTopBar />
+    </div>
+  );
 }
 
 export default App;
