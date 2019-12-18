@@ -1,13 +1,15 @@
 import React from "react";
 
 import AppTopBar from "./Components/AppBar";
+import SideMenu from "./Components/SideMenu";
 
 import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <AppTopBar />
+      <SideMenu />
     </div>
   );
 }

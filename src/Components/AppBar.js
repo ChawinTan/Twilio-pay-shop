@@ -8,6 +8,10 @@ import PaymentIcon from "@material-ui/icons/Payment";
 import ListIcon from "@material-ui/icons/List";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 
+import appConstants from "../constants";
+
+const drawerWidth = appConstants.drawerWidth;
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -21,6 +25,10 @@ const useStyles = makeStyles(theme => ({
   },
   icons: {
     color: "#ffffff"
+  },
+  appBar: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth
   }
 }));
 
@@ -34,7 +42,11 @@ function AppTopBar() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={styles.appBar}>
+      <AppBar
+        position="static"
+        className={classes.appBar}
+        style={styles.appBar}
+      >
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
             Owl Shop
