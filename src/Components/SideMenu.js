@@ -13,6 +13,7 @@ import FastfoodIcon from "@material-ui/icons/Fastfood";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import InfoIcon from "@material-ui/icons/Info";
 import ContactsIcon from "@material-ui/icons/Contacts";
+import { Link } from "react-router-dom";
 
 import appConstants from "../constants";
 
@@ -38,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 function SideMenu() {
   const classes = useStyles();
   const mainMenu = [
-    <ListItem key={0} button>
+    <ListItem key={0} button component={Link} to="/">
       <ListItemIcon>
         <HomeIcon className={classes.icons} />
       </ListItemIcon>
@@ -48,7 +49,7 @@ function SideMenu() {
         primary={"Home"}
       />
     </ListItem>,
-    <ListItem key={1} button>
+    <ListItem key={1} button component={Link} to="/apparel">
       <ListItemIcon>
         <EmojiPeopleIcon className={classes.icons} />
       </ListItemIcon>
@@ -58,7 +59,7 @@ function SideMenu() {
         primary={"Apparel"}
       />
     </ListItem>,
-    <ListItem key={2} button>
+    <ListItem key={2} button component={Link} to="/shoes">
       <ListItemIcon>
         <DirectionsRunIcon className={classes.icons} />
       </ListItemIcon>
@@ -68,7 +69,7 @@ function SideMenu() {
         primary={"Shoes"}
       />
     </ListItem>,
-    <ListItem key={3} button>
+    <ListItem key={3} button component={Link} to="/gourmet">
       <ListItemIcon>
         <FastfoodIcon className={classes.icons} />
       </ListItemIcon>
@@ -78,7 +79,7 @@ function SideMenu() {
         primary={"Gourmet"}
       />
     </ListItem>,
-    <ListItem key={4} button>
+    <ListItem key={4} button component={Link} to="/instruments">
       <ListItemIcon>
         <MusicNoteIcon className={classes.icons} />
       </ListItemIcon>
@@ -90,7 +91,7 @@ function SideMenu() {
     </ListItem>
   ];
   const aboutMenu = [
-    <ListItem key={0} button>
+    <ListItem key={0} button component={Link} to="/about">
       <ListItemIcon>
         <InfoIcon className={classes.icons} />
       </ListItemIcon>
@@ -100,7 +101,7 @@ function SideMenu() {
         primary={"About"}
       />
     </ListItem>,
-    <ListItem key={1} button>
+    <ListItem key={1} button component={Link} to="/contact">
       <ListItemIcon>
         <ContactsIcon className={classes.icons} />
       </ListItemIcon>

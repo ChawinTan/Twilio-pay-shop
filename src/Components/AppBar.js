@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import PaymentIcon from "@material-ui/icons/Payment";
 import ListIcon from "@material-ui/icons/List";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import { Link } from "react-router-dom";
 
 import appConstants from "../constants";
 
@@ -51,10 +52,10 @@ function AppTopBar() {
           <Typography variant="h5" className={classes.title}>
             Owl Shop
           </Typography>
-          <IconButton>
+          <IconButton component={Link} to={"/wishlist"}>
             <ListIcon className={classes.icons} />
           </IconButton>
-          <IconButton>
+          <IconButton component={Link} to={"/payment"}>
             <PaymentIcon className={classes.icons} />
           </IconButton>
           <IconButton>
