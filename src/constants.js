@@ -2,6 +2,9 @@ import Apparel1 from "./Assets/apparal_1.jpg";
 import Apparel2 from "./Assets/apparal_2.jpg";
 import Apparel3 from "./Assets/apparal_3.jpg";
 import Apparel4 from "./Assets/apparal_4.jpg";
+import Shoe1 from "./Assets/shoe_1.jpg";
+import Shoe2 from "./Assets/shoe_2.jpg";
+import Shoe3 from "./Assets/shoe_3.jpg";
 
 const appConstants = {
   drawerWidth: 240,
@@ -44,6 +47,23 @@ const appConstants = {
       picture: Apparel4,
       text: "Warm Scarfs",
       price: 5
+    }
+  ],
+  shoe: [
+    {
+      picture: Shoe1,
+      text: "Bouncy Shoe",
+      price: 8
+    },
+    {
+      picture: Shoe2,
+      text: "Fast Shoe",
+      price: 11
+    },
+    {
+      picture: Shoe3,
+      text: "Nice Shoe",
+      price: 9
     }
   ]
 };

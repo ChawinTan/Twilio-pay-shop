@@ -48,9 +48,12 @@ function Apparel(props) {
     const selectedApparel = apparels[index];
     const quantity = event.target.value;
     if (quantity === 0) {
-      removeProduct(selectedApparel);
+      removeProduct("REMOVE_APPAREL", selectedApparel);
     } else {
-      addProduct({ selected: selectedApparel, quantity: quantity });
+      addProduct("ADD_APPAREL", {
+        selected: selectedApparel,
+        quantity: quantity
+      });
     }
     qtyState[index] = quantity;
   };

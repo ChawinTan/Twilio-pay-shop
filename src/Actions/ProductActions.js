@@ -1,13 +1,13 @@
-export function removeProduct(selectedProduct) {
+export function removeProduct(type, selectedProduct) {
   return {
-    type: "REMOVE_PRODUCT",
+    type,
     payload: selectedProduct
   };
 }
 
-export function addProduct(selectedProduct) {
+export function addProduct(type, selectedProduct) {
   return {
-    type: "ADD_PRODUCT",
+    type,
     payload: selectedProduct
   };
 }

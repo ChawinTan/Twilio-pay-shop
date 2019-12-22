@@ -12,11 +12,11 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    addProduct: selectedProduct => {
-      dispatch(addProduct(selectedProduct));
+    addProduct: (type, selectedProduct) => {
+      dispatch(addProduct(type, selectedProduct));
     },
-    removeProduct: selectedProduct => {
-      dispatch(removeProduct(selectedProduct));
+    removeProduct: (type, selectedProduct) => {
+      dispatch(removeProduct(type, selectedProduct));
     }
   };
 };
