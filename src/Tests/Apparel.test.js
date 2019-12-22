@@ -15,13 +15,49 @@ test("renders without crashing", () => {
   );
 });
 
-test("it should change className on click FavoriteIcon", () => {
-  const container = shallow(<Apparel />);
-  const initialClassname = container.find("FavoriteIcon").prop("className");
+describe("Apparel", () => {
+  let container;
+  let props = {
+    addProduct: jest.fn(),
+    removeProduct: jest.fn()
+  };
+  beforeEach(() => {
+    container = shallow(<Apparel {...props} />);
+  });
 
-  container.find("FavoriteIcon").simulate("click");
+  test("it should change className on click FavoriteIcon", () => {
+    const initialClassname = container.find("FavoriteIcon").prop("className");
 
-  expect(container.find("FavoriteIcon").prop("className")).not.toBe(
-    initialClassname
-  );
+    container.find("FavoriteIcon").simulate("click");
+    const updatedClassname = container.find("FavoriteIcon").prop("className");
+
+    expect(container.find("FavoriteIcon").prop("className")).not.toBe(
+      initialClassname
+    );
+
+    container.find("FavoriteIcon").simulate("click");
+
+    expect(container.find("FavoriteIcon").prop("className")).not.toBe(
+      updatedClassname
+    );
+  });
+
+  test("it should change quantity of select on select MenuItem", () => {
+    const testEventAdd = { target: { value: 2 } };
+    const testEventRemove = { target: { value: 0 } };
+
+    container
+      .find("#select-quantity")
+      .at(1)
+      .simulate("change", testEventAdd);
+
+    expect(props.addProduct).toHaveBeenCalledTimes(1);
+
+    container
+      .find("#select-quantity")
+      .at(1)
+      .simulate("change", testEventRemove);
+
+    expect(props.removeProduct).toHaveBeenCalledTimes(1);
+  });
 });

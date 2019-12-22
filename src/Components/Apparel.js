@@ -31,21 +31,10 @@ const useStyle = makeStyles(() => ({
   }
 }));
 
-const removeApparel = (apparel, selectedApparel) => {
-  if (apparel.length > 0) {
-    const updatedApparel = apparel.filter(item => {
-      if (item.item !== selectedApparel.text) {
-        return item;
-      }
-    });
-    return updatedApparel;
-  }
-  return apparel;
-};
-
-function Apparel() {
+function Apparel(props) {
   const classes = useStyle();
 
+  const { addProduct, removeProduct } = props;
   const [subscribe, setSubscribe] = useState(false);
   const handleSubscribe = () => {
     if (subscribe) {
@@ -55,34 +44,13 @@ function Apparel() {
     }
   };
 
-  const [apparel, setApparel] = useState([]);
   const handleChangeApparel = (event, index) => {
     const selectedApparel = apparels[index];
     const quantity = event.target.value;
     if (quantity === 0) {
-      const updatedApparel = removeApparel(apparel, selectedApparel);
-      setApparel(updatedApparel);
+      removeProduct(selectedApparel);
     } else {
-      if (
-        apparel.length > 0 &&
-        apparel.some(item => item.item === selectedApparel.text)
-      ) {
-        const updatedApparel = apparel.map(item => {
-          if (item.item === selectedApparel.text) {
-            return { ...item, qty: quantity };
-          }
-          return item;
-        });
-        setApparel(updatedApparel);
-      } else {
-        const newApparel = {
-          item: selectedApparel.text,
-          price: selectedApparel.price,
-          qty: quantity
-        };
-        const updatedApparel = [...apparel, newApparel];
-        setApparel(updatedApparel);
-      }
+      addProduct({ selected: selectedApparel, quantity: quantity });
     }
     qtyState[index] = quantity;
   };

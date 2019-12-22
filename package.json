@@ -64,7 +64,14 @@
       "!<rootDir>/node_modules/",
       "!<rootDir>/path/to/dir/",
       "!src/index.js",
-      "!src/serviceWorker.js"
+      "!src/serviceWorker.js",
+      "!src/Containers/apparelContainer.js",
+      "!src/Containers/gourmetContainer.js",
+      "!src/Containers/instrumentsContainer.js",
+      "!src/Containers/paymentContainer.js",
+      "!src/Containers/shoesContainer.js",
+      "!src/Containers/wishlistContainer.js",
+      "!src/Reducers/combinedReducers.js"
     ],
     "coverageThreshold": {
       "global": {
