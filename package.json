@@ -28,6 +28,7 @@
     "react-test-renderer": "^16.12.0",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0"
   },
   "lint-staged": {
@@ -71,7 +72,9 @@
       "!src/Containers/paymentContainer.js",
       "!src/Containers/shoesContainer.js",
       "!src/Containers/wishlistContainer.js",
-      "!src/Reducers/combinedReducers.js"
+      "!src/Reducers/combinedReducers.js",
+      "!src/PersistingStates.js",
+      "!src/store.js"
     ],
     "coverageThreshold": {
       "global": {

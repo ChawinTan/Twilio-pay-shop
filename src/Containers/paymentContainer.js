@@ -4,13 +4,9 @@ import { withRouter } from "react-router-dom";
 import Payment from "../Components/Payment";
 
 export const mapStateToProps = state => {
-  return {};
+  return {
+    selectedItems: { apparel: state.apparelReducer, shoe: state.shoeReducer }
+  };
 };
 
-export const mapDispatchToProps = dispatch => {
-  return {};
-};
-
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Payment)
-);
+export default withRouter(connect(mapStateToProps, null)(Payment));
