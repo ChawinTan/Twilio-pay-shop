@@ -1,6 +1,12 @@
 import apparelReducer from "../Reducers/ApparelReducer";
 
 test("it should return default state", () => {
+  const defaultReducer = apparelReducer(undefined, {});
+
+  expect(defaultReducer).toEqual([]);
+});
+
+test("it should return default state", () => {
   const defaultReducer = apparelReducer([], {});
 
   expect(defaultReducer).toEqual([]);
