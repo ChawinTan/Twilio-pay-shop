@@ -8,6 +8,9 @@ import Shoe3 from "./Assets/shoe_3.jpg";
 import food1 from "./Assets/food_1.jpg";
 import food2 from "./Assets/food_2.jpg";
 import food3 from "./Assets/food_3.jpg";
+import violin1 from "./Assets/violin_1.jpeg";
+import violin2 from "./Assets/violin_2.jpg";
+import violin3 from "./Assets/violin_3.jpg";
 
 const appConstants = {
   drawerWidth: 240,
@@ -84,6 +87,23 @@ const appConstants = {
       picture: food3,
       text: "Ice Cream",
       price: 3
+    }
+  ],
+  instruments: [
+    {
+      picture: violin1,
+      text: "Copy Cat",
+      price: 100
+    },
+    {
+      picture: violin2,
+      text: "Ling Ling",
+      price: 120
+    },
+    {
+      picture: violin3,
+      text: "sacrilegious",
+      price: 40
     }
   ]
 };

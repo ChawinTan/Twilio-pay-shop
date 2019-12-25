@@ -2,13 +2,23 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import Instruments from "../Components/Instruments";
+import { removeProduct, addProduct } from "../Actions/ProductActions";
 
 export const mapStateToProps = state => {
-  return {};
+  return {
+    instrument: state.instrumentReducer
+  };
 };
 
 export const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    addProduct: (type, selectedProduct) => {
+      dispatch(addProduct(type, selectedProduct));
+    },
+    removeProduct: (type, selectedProduct) => {
+      dispatch(removeProduct(type, selectedProduct));
+    }
+  };
 };
 
 export default withRouter(

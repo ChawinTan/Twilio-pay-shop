@@ -8,7 +8,8 @@ export const mapStateToProps = state => {
     selectedItems: {
       apparel: state.apparelReducer,
       shoe: state.shoeReducer,
-      gourmet: state.gourmetReducer
+      gourmet: state.gourmetReducer,
+      instrument: state.instrumentReducer
     }
   };
 };
