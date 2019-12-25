@@ -5,7 +5,11 @@ import Payment from "../Components/Payment";
 
 export const mapStateToProps = state => {
   return {
-    selectedItems: { apparel: state.apparelReducer, shoe: state.shoeReducer }
+    selectedItems: {
+      apparel: state.apparelReducer,
+      shoe: state.shoeReducer,
+      gourmet: state.gourmetReducer
+    }
   };
 };
 
