@@ -6,6 +6,8 @@ import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 import appConstants from "../constants";
 
@@ -21,7 +23,7 @@ const styles = {
     fontWeight: 600,
     fontSize: "1.2rem"
   },
-  payNumber: {
+  paymentHeading: {
     fontSize: "1.3rem"
   },
   instructions: {
@@ -50,6 +52,14 @@ const useStyles = makeStyles(() => ({
   paymentList: {
     backgroundColor: "#e9e9e9",
     margin: "1rem 0"
+  },
+  outboundPaymentPaper: {
+    opacity: 0.8,
+    marginTop: "1rem",
+    padding: "1rem"
+  },
+  callButton: {
+    marginTop: "1rem"
   }
 }));
 
@@ -59,6 +69,7 @@ function Payment(props) {
   const { selectedItems } = props;
   const [finalPrice, setFinalPrice] = useState(0);
   const [itemList, setItemList] = useState([]);
+  const [number, setNumber] = useState("");
 
   const paymentInstructions = [
     "1. Credit Card Number - 4242 4242 4242 4242",
@@ -71,6 +82,26 @@ function Payment(props) {
     "2. 4000 0000 0000 9995 - Card has insufficient funds",
     "3. 4000 0000 0000 0069 - Card expired"
   ];
+
+  const onChangeNumber = event => {
+    setNumber(event.target.value);
+  };
+
+  const callTwilio = () => {
+    fetch(appConstants.outBoundUrl, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        number: number,
+        amount: finalPrice
+      })
+    })
+      .then(res => res.json())
+      .then(json => console.log(json));
+  };
 
   useEffect(() => {
     const objKeys = Object.keys(selectedItems);
@@ -168,12 +199,23 @@ function Payment(props) {
               </ListItem>
             </List>
           </Paper>
+
+          <Paper className={classes.outboundPaymentPaper}>
+            <div style={styles.paymentHeading}>Enter your phone number</div>
+            <TextField
+              label="Enter phone number..."
+              onChange={onChangeNumber}
+            />
+            <div className={classes.callButton}>
+              <Button variant="contained" color="primary" onClick={callTwilio}>
+                Call!
+              </Button>
+            </div>
+          </Paper>
         </Grid>
         <Grid key="payment" item>
           <Paper className={classes.paymentPaper}>
-            <div style={styles.payNumber}>
-              Call +65 3129 2152 to make payment
-            </div>
+            <div style={styles.paymentHeading}>Making Payment ...</div>
             <div style={styles.instructions}>
               Instructions for making payment:
             </div>

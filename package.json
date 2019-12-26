@@ -74,7 +74,10 @@
       "!src/Containers/wishlistContainer.js",
       "!src/Reducers/combinedReducers.js",
       "!src/PersistingStates.js",
-      "!src/store.js"
+      "!src/store.js",
+      "!src/Functions/Action.js",
+      "!src/Functions/outboundCall.js",
+      "!src/Functions/TwimlPay.js"
     ],
     "coverageThreshold": {
       "global": {

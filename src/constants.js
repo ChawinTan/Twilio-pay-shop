@@ -105,7 +105,8 @@ const appConstants = {
       text: "sacrilegious",
       price: 40
     }
-  ]
+  ],
+  outBoundUrl: "url for outbound call"
 };
 
 export default appConstants;
