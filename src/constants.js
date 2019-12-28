@@ -11,6 +11,8 @@ import food3 from "./Assets/food_3.jpg";
 import violin1 from "./Assets/violin_1.jpeg";
 import violin2 from "./Assets/violin_2.jpg";
 import violin3 from "./Assets/violin_3.jpg";
+import twilio from "./Assets/twilio.jpg";
+import stripe from "./Assets/stripe.png";
 
 const appConstants = {
   drawerWidth: 240,
@@ -106,6 +108,14 @@ const appConstants = {
       price: 40
     }
   ],
+  about: {
+    twilio: {
+      picture: twilio
+    },
+    stripe: {
+      picture: stripe
+    }
+  },
   outBoundUrl: "url for outbound call"
 };
 
