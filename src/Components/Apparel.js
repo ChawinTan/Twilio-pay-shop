@@ -34,13 +34,15 @@ const useStyle = makeStyles(() => ({
 function Apparel(props) {
   const classes = useStyle();
 
-  const { addProduct, removeProduct } = props;
+  const { addProduct, removeProduct, subscribeProduct } = props;
   const [subscribe, setSubscribe] = useState(false);
   const handleSubscribe = () => {
     if (subscribe) {
       setSubscribe(false);
+      subscribeProduct("APPAREL_UNSUBSCRIBE", false);
     } else {
       setSubscribe(true);
+      subscribeProduct("APPAREL_SUBSCRIBE", true);
     }
   };
 

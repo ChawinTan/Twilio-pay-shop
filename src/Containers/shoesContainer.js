@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import Shoes from "../Components/Shoes";
 import { removeProduct, addProduct } from "../Actions/ProductActions";
+import { subscribeProduct } from "../Actions/SubscribeActions";
 
 export const mapStateToProps = state => {
   return {
@@ -17,6 +18,9 @@ export const mapDispatchToProps = dispatch => {
     },
     removeProduct: (type, selectedProduct) => {
       dispatch(removeProduct(type, selectedProduct));
+    },
+    subscribeProduct: (type, subscribe) => {
+      dispatch(subscribeProduct(type, subscribe));
     }
   };
 };

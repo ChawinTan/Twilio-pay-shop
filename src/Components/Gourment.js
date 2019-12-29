@@ -34,13 +34,15 @@ const useStyle = makeStyles(() => ({
 function Gourmet(props) {
   const classes = useStyle();
 
-  const { addProduct, removeProduct } = props;
+  const { addProduct, removeProduct, subscribeProduct } = props;
   const [subscribe, setSubscribe] = useState(false);
   const handleSubscribe = () => {
     if (subscribe) {
       setSubscribe(false);
+      subscribeProduct("GOURMET_UNSUBSCRIBE", false);
     } else {
       setSubscribe(true);
+      subscribeProduct("GOURMET_SUBSCRIBE", true);
     }
   };
 

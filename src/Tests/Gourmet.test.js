@@ -19,7 +19,8 @@ describe("Gourmet", () => {
   let container;
   let props = {
     addProduct: jest.fn(),
-    removeProduct: jest.fn()
+    removeProduct: jest.fn(),
+    subscribeProduct: jest.fn()
   };
   beforeEach(() => {
     container = shallow(<Gourmet {...props} />);
