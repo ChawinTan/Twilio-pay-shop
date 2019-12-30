@@ -32,7 +32,8 @@ const styles = {
 const useStyles = makeStyles(() => ({
   paper: {
     padding: "1rem",
-    opacity: "0.8"
+    opacity: "0.8",
+    width: "400px"
   },
   linkedin: {
     color: "#0072b1"
@@ -76,7 +77,7 @@ function Contact() {
       <Paper className={classes.paper}>
         <div style={styles.heading}>Let's Connect</div>
         <div style={styles.tagLine}>
-          Feel free to reach out if you anything on your mind!
+          Like minded or just want to collaborate? Find me on these Channels
         </div>
         <Grid
           container
