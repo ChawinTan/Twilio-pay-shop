@@ -20,7 +20,9 @@ Once done, login to your twilio account, head to `Functions` and create the foll
 
 3. `outboundCall.js` - this will be function that makes the outbound call from your Twilio number to your number. Replace the `url` parameter in `create` with the url from `TwimlPay.js` and the `from` parameter with your own twilio number (above).
 
-Once done with your twilio functions, replace `outBoundUrl` under `src/constants.js` with the url from `outboundCall.js`.
+4. `outboundSms.js` - this will send send the outbound sms for the customer's wishlist items
+
+Once done with your twilio functions, replace `outBoundUrl` under `src/constants.js` with the url from `outboundCall.js` and `wishlistUrl` with the url from `outboundSms.js`.
 
 ## Available Scripts
 

@@ -117,7 +117,7 @@ const appConstants = {
     }
   },
   outBoundUrl: "url for outbound call",
-  wishlistUrl: "https://rackley-octopus-5384.twil.io/wishlist"
+  wishlistUrl: "url for outbound sms"
 };
 
 export default appConstants;
