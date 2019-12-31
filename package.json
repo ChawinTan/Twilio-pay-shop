@@ -77,7 +77,8 @@
       "!src/store.js",
       "!src/Functions/Action.js",
       "!src/Functions/outboundCall.js",
-      "!src/Functions/TwimlPay.js"
+      "!src/Functions/TwimlPay.js",
+      "!src/Functions/outboundSms.js"
     ],
     "coverageThreshold": {
       "global": {

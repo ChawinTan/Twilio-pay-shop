@@ -72,6 +72,19 @@ function Wishlist(props) {
     setNumber(event.target.value);
   };
 
+  const sendSms = () => {
+    fetch(appConstants.wishlistUrl, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        number: number
+      })
+    });
+  };
+
   return (
     <div style={styles.root}>
       <div style={styles.heading}>My Wishlist</div>
@@ -111,8 +124,8 @@ function Wishlist(props) {
                 />
               </div>
               <div>
-                <Button variant="contained" color="primary">
-                  Update
+                <Button variant="contained" color="primary" onClick={sendSms}>
+                  Get Update
                 </Button>
               </div>
             </div>

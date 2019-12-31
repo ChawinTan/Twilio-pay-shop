@@ -116,7 +116,8 @@ const appConstants = {
       picture: stripe
     }
   },
-  outBoundUrl: "url for outbound call"
+  outBoundUrl: "url for outbound call",
+  wishlistUrl: "https://rackley-octopus-5384.twil.io/wishlist"
 };
 
 export default appConstants;
