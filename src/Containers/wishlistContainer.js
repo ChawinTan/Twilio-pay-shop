@@ -4,13 +4,9 @@ import { withRouter } from "react-router-dom";
 import WishList from "../Components/WishList";
 
 export const mapStateToProps = state => {
-  return {};
+  return {
+    wishlist: state.subscribeReducer
+  };
 };
 
-export const mapDispatchToProps = dispatch => {
-  return {};
-};
-
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(WishList)
-);
+export default withRouter(connect(mapStateToProps, null)(WishList));
